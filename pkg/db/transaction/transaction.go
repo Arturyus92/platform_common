@@ -3,7 +3,7 @@ package transaction
 import (
 	"context"
 
-	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v4"
 	"github.com/pkg/errors"
 
 	"github.com/Arturyus92/platform_common/pkg/db"

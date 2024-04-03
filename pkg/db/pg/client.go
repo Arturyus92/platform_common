@@ -3,7 +3,7 @@ package pg
 import (
 	"context"
 
-	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/pkg/errors"
 
 	"github.com/Arturyus92/platform_common/pkg/db"
@@ -15,7 +15,7 @@ type pgClient struct {
 
 // New - ...
 func New(ctx context.Context, dsn string) (db.Client, error) {
-	dbc, err := pgxpool.New(ctx, dsn)
+	dbc, err := pgxpool.Connect(ctx, dsn)
 
 	if err != nil {
 		return nil, errors.Errorf("failed to connect to db: %v", err)
